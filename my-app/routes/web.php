@@ -28,6 +28,26 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // views 
-Route::get('/hello', function () {
-    return view('hello');
-});
+// Route::get('/hello', function () {
+//     return view('hello');
+// });
+// Route::get('/user', function () {
+//     $name = "Sandhya";
+//     return view('user', ['name' => $name]);
+// });
+
+//route with html
+// Route::get('/hello', function () {
+//     return "<h1> Hello <h1>";
+// });
+
+// Route::get('/add/{a}/{b}', function ($a, $b) {
+//     return $a + $b;
+// });
+
+
+//CA 1:
+use App\Http\Controllers\MainController;
+Route::get('/courses', [MainController::class, 'listCourses'])->name('courses.list');
+
+Route::get('/course/{id}', [MainController::class, 'showCourse'])->name('course.show');
