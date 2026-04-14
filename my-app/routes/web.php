@@ -47,7 +47,11 @@ use Illuminate\Support\Facades\Route;
 
 
 //CA 1:
-use App\Http\Controllers\MainController;
-Route::get('/courses', [MainController::class, 'listCourses'])->name('courses.list');
+// use App\Http\Controllers\MainController;
+// Route::get('/courses', [MainController::class, 'listCourses'])->name('courses.list');
 
-Route::get('/course/{id}', [MainController::class, 'showCourse'])->name('course.show');
+// Route::get('/course/{id}', [MainController::class, 'showCourse'])->name('course.show');
+
+// FormEIController
+use App\Http\Controllers\FormEIController;
+Route::get('/abcd', [FormEIController::class, 'show']);
