@@ -53,5 +53,17 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/course/{id}', [MainController::class, 'showCourse'])->name('course.show');
 
 // FormEIController
-use App\Http\Controllers\FormEIController;
-Route::get('/abcd', [FormEIController::class, 'show']);
+// use App\Http\Controllers\FormEIController;
+// Route::get('/abcd', [FormEIController::class, 'show']);
+
+use App\Http\Controllers\uploadEIController;
+Route::get('/upload', [uploadEIController::class, 'show']);
+Route::post('/upload', [uploadEIController::class, 'upload']);
+
+
+// step 1. create a folder resources/lang/env/file called messages.php
+// put your content inside message.php 
+// create a view 
+// get a view passed in message.php to homeEI.blade.php
+// add suitable routes to web.php for return view 
+// open env file to make changes in line 7  app/local/
