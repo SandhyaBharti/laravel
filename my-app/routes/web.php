@@ -56,9 +56,9 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\FormEIController;
 // Route::get('/abcd', [FormEIController::class, 'show']);
 
-use App\Http\Controllers\uploadEIController;
-Route::get('/upload', [uploadEIController::class, 'show']);
-Route::post('/upload', [uploadEIController::class, 'upload']);
+// use App\Http\Controllers\uploadEIController;
+// Route::get('/upload', [uploadEIController::class, 'show']);
+// Route::post('/upload', [uploadEIController::class, 'upload']);
 
 
 // step 1. create a folder resources/lang/env/file called messages.php
@@ -67,3 +67,27 @@ Route::post('/upload', [uploadEIController::class, 'upload']);
 // get a view passed in message.php to homeEI.blade.php
 // add suitable routes to web.php for return view 
 // open env file to make changes in line 7  app/local/
+
+// lang 
+
+Route::get('/', function () {
+    return view('home');
+})->middleware('setlocale3');
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'hi', 'pa', 'gu', 'te', 'as', 'bn', 'ta'])) {
+        session(['locale' => $locale]);
+    }
+
+    return redirect('/');
+});
+
+// 21-06-2024
+// Route::get('/', function () {
+//     return view('home'); // your blade file
+// });
+
+// Route::get('/lang/{locale}', function ($locale) {
+//     session(['locale' => $locale]);
+//     return redirect('/');
+// });
