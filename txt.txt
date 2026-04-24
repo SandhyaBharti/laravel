@@ -1,0 +1,5 @@
+how to test (Flow)
+Open  /set-city -> cookie is created (city = mumbai)
+open /get-city -> diplays stored cookie value
+open /check-city -> verified whether cookie exists
+open /

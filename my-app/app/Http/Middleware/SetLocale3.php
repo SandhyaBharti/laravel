@@ -13,7 +13,7 @@ class SetLocale3
     {
         $locale = session('locale');
 
-        if (in_array($locale, ['en', 'hi', 'pa'])) {
+        if (in_array($locale, ['en', 'hi', 'pa', 'gu', 'te', 'as', 'bn', 'ta'])) {
             App::setLocale($locale);
         } else {
             App::setLocale('en');
