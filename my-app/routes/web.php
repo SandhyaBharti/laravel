@@ -69,18 +69,17 @@ use Illuminate\Support\Facades\Route;
 // open env file to make changes in line 7  app/local/
 
 // lang 
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware('setlocale3');
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('setlocale3');
+// Route::get('/lang/{locale}', function ($locale) {
+//     if (in_array($locale, ['en', 'hi', 'pa', 'gu', 'te', 'as', 'bn', 'ta'])) {
+//         session(['locale' => $locale]);
+//     }
 
-Route::get('/lang/{locale}', function ($locale) {
-    if (in_array($locale, ['en', 'hi', 'pa', 'gu', 'te', 'as', 'bn', 'ta'])) {
-        session(['locale' => $locale]);
-    }
-
-    return redirect('/');
-});
+//     return redirect('/');
+// });
 
 // 21-06-2024
 // Route::get('/', function () {
@@ -91,3 +90,16 @@ Route::get('/lang/{locale}', function ($locale) {
 //     session(['locale' => $locale]);
 //     return redirect('/');
 // });
+
+
+// form with session
+use App\Http\Controllers\UserController;
+Route::get('/form',  [UserController::class, 'showForm']);
+Route::post('/save', [UserController::class, 'saveData']);
+Route::get('/dashboard', [UserController::class, 'dashboard']);
+Route::get('/logout', [UserController::class, 'logout']);
+
+// Task 1:
+use App\Http\Controllers\TaskController;
+Route::get('/register', [TaskController::class, 'create']);
+Route::post('/register', [TaskController::class, 'store']);
