@@ -3,3 +3,6 @@ Open  /set-city -> cookie is created (city = mumbai)
 open /get-city -> diplays stored cookie value
 open /check-city -> verified whether cookie exists
 open /
+
+
+// to create new project named "unit5" => composer create-project laravel/laravel unit5
