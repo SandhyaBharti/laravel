@@ -5,4 +5,4 @@ open /check-city -> verified whether cookie exists
 open /
 
 
-// to create new project named "unit5" => composer create-project laravel/laravel unit5
+// to create new project named "unit5" => composer create-project laravel/laravel nameOfProject (unit5)
