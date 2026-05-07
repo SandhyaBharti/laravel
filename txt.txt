@@ -6,3 +6,14 @@ open /
 
 
 // to create new project named "unit5" => composer create-project laravel/laravel nameOfProject (unit5)
+
+
+// steps to create seeder 
+step1: open xampp server, turn on apache and mysql
+step2: open phpMyAdmin
+step3: open .env file -> update db.name, uncomment from line 23 to 28, database connection will be mysql
+step4: create migration - php artisan make:migration create_students_table
+step5: php artisan migrate - for migrating columns
+step6: create seeder - StudentSeeder - add mandatory import :- use Illuminate\support\Facades\DB;
+step7: open dtabaseseeder from seeder folder, call your created seeder
+step8: run php artisan serve
